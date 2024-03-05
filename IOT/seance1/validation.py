@@ -1,3 +1,4 @@
+import sys
 import json
 
 
@@ -81,18 +82,26 @@ schema = {
     "required": ["status", "location", "regul", "info", "net", "reporthost", "port", "_msgid"]
 }
 
-# Ouvrir le port série
-ser = serial.Serial('COM4', 9600)
+# Fonction pour validation JSON
+def validate_json(json_data):
+    try:
+        validate(instance=json_data, schema=schema)
+        print("Le JSON est valide par rapport au schéma.")
+    except Exception as e:
+        print("Le JSON n'est pas valide par rapport au schéma.")
+        print(e)
 
-# Lire les données depuis le port série
-data = ser.readline()
+# Lecture contenu du fichier JSON
+def read_json_file(filename):
+    with open(filename, 'r') as file:
+        json_data = json.load(file)
+    return json_data
 
-# Convertir les données en JSON
-data_json = json.loads(data)
+# Chemin vers le fichier JSON à valider
+json_file_path = sys.argv[1]
 
-# Valider les données
-try:
-    validate(instance=data_json, schema=schema)
-    print("JSON data is valid")
-except ValidationError as e:
-    print("JSON data is invalid: ", e.message)
+# Lire le fichier JSON
+json_data = read_json_file(json_file_path)
+
+# Appel de la fonction de validation
+validate_json(json_data)
