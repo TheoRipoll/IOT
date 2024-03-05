@@ -1,227 +1,44 @@
 [
     {
-        "id": "28e399a9318f84d4",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "c5b576d6c2c27e71",
-        "type": "tab",
-        "label": "Flow 3",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "0c711f93452822e2",
-        "type": "serial-port",
+        "id": "26de103545f647cb",
+        "type": "ui_text",
+        "z": "53b59f890c40bd14",
+        "g": "03b58927ca4999e0",
+        "group": "1b86015c.b9ebea",
+        "order": 3,
+        "width": 0,
+        "height": 0,
         "name": "",
-        "serialport": "dev/ttyUSB0",
-        "serialbaud": "9600",
-        "databits": "8",
-        "parity": "none",
-        "stopbits": "1",
-        "waitfor": "",
-        "dtr": "none",
-        "rts": "none",
-        "cts": "none",
-        "dsr": "none",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
-    },
-    {
-        "id": "9e002d02.30c17",
-        "type": "serial-port",
-        "serialport": "/dev/ttyUSB0",
-        "serialbaud": "9600",
-        "databits": "8",
-        "parity": "none",
-        "stopbits": "1",
-        "waitfor": "",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
-    },
-    {
-        "id": "b11f0b2c.e6fbd",
-        "type": "ui_group",
-        "name": "ESP Status",
-        "tab": "d3f5823f.0a13c",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "d3f5823f.0a13c",
-        "type": "ui_tab",
-        "name": "Dashboard",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "f09111aa260ce02c",
-        "type": "ui_group",
-        "name": "ESP Status",
-        "tab": "d3f5823f.0a13c",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "06a8ddbec4aa9cc8",
-        "type": "ui_tab",
-        "name": "Dashboard",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "51a048c95184757d",
-        "type": "serial in",
-        "z": "28e399a9318f84d4",
-        "name": "ESP",
-        "serial": "0c711f93452822e2",
-        "x": 70,
-        "y": 160,
-        "wires": [
-            [
-                "0185cdb602a792e6",
-                "d24f5c9a4df5df51"
-            ]
-        ]
-    },
-    {
-        "id": "0185cdb602a792e6",
-        "type": "debug",
-        "z": "28e399a9318f84d4",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 200,
-        "y": 320,
+        "label": "Regul",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 690,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "d24f5c9a4df5df51",
-        "type": "json",
-        "z": "28e399a9318f84d4",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 250,
-        "y": 80,
-        "wires": [
-            [
-                "f1819a510f9afbdd",
-                "95a7b33734d6a73a",
-                "c48f96b0745012d4"
-            ]
-        ]
+        "id": "1b86015c.b9ebea",
+        "type": "ui_group",
+        "name": "Raw data",
+        "tab": "5a7a3f39.16b81c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
-        "id": "f1819a510f9afbdd",
-        "type": "function",
-        "z": "28e399a9318f84d4",
-        "name": "function 1",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "95a7b33734d6a73a",
-        "type": "function",
-        "z": "28e399a9318f84d4",
-        "name": "function 2",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c48f96b0745012d4",
-        "type": "function",
-        "z": "28e399a9318f84d4",
-        "name": "function 3",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d2359f6c5a9a6898",
-        "type": "serial in",
-        "z": "c5b576d6c2c27e71",
-        "name": "ESP",
-        "serial": "9e002d02.30c17",
-        "x": 130,
-        "y": 140,
-        "wires": [
-            [
-                "3f8e5cb4be78bfe7"
-            ]
-        ]
-    },
-    {
-        "id": "3f8e5cb4be78bfe7",
-        "type": "function",
-        "z": "c5b576d6c2c27e71",
-        "name": "JSON PARSING",
-        "func": "\nvar parsedData = {\n    temperature: msg.payload.status.temperature,\n    light: msg.payload.status.light,\n    regulation: msg.payload.status.regul,\n    fire: msg.payload.status.fire,\n    heat: msg.payload.status.heat,\n    cold: msg.payload.status.cold,\n    fanSpeed: msg.payload.status.fanspeed,\n    room: msg.payload.location.room,\n    latitude: msg.payload.location.gps.lat,\n    longitude: msg.payload.location.gps.lon,\n    address: msg.payload.location.address,\n    lowTempRegulation: msg.payload.regul.lt,\n    highTempRegulation: msg.payload.regul.ht,\n    deviceId: msg.payload.info.ident,\n    user: msg.payload.info.user,\n    location: msg.payload.info.loc,\n    uptime: msg.payload.net.uptime,\n    ssid: msg.payload.net.ssid,\n    macAddress: msg.payload.net.mac,\n    ipAddress: msg.payload.net.ip,\n    targetIP: msg.payload.reporthost.target_ip,\n    targetPort: msg.payload.reporthost.target_port,\n    sp: msg.payload.reporthost.sp\n};\n\nmsg.payload = parsedData;\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 140,
-        "wires": [
-            []
-        ]
+        "id": "5a7a3f39.16b81c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     }
 ]

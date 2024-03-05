@@ -1,3 +1,5 @@
+/////MAUVAIS CODE/////
+
 const int ledCoolerPin = 19; // ledPin refers to ESP32 GPIO 19 : Broche D19 sur la carte
 const int ledHeaterPin = 21;
 
